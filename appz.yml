@@ -1,27 +1,29 @@
 app:
     name: Postgres Master
     code: POSTGRES
-    notify: nanimineni@ecloudcontrol.com
+    notify: ssankar@ecloudcontrol.com
     
 build:
-    version: 13.X
+    version: 12.7
     env: DEV
     build_file: none
     output_files: output/*.zip
-    image_template: postgres_master-13.3
+    image_template: postgres_master-12.7
+    image_name: appz/postgress_master
     
 deploy:
-    context: nageshaniminedi/DEV
+    context: awx/DEV
     type: statefulset
     replicas: 1
     port:
     - 5432
     
 volumes:
-  - claim: postgres-master-data
+  - claim: postgres13-master-12-7-data-dev
     mount: /appz/data
     name: data
     size: 5Gi
+    class: local-storage
     mode: ReadWriteOnce   
     
 properties:
@@ -30,21 +32,11 @@ properties:
     POSTGRESQL_CONNECTUSER: postgres
     POSTGRESQL_CONNECTIONDB: postgres
     POSTGRESQL_PORT: 5432
-    POSTGRESQL_PASSWORD: 
-      vault: POSTGRESQL_PASSWORD
+    POSTGRESQL_PASSWORD: R53BiUCCmk45rb
     POSTGRESQL_SYNCHRONOUS_COMMIT_MODE: on
     POSTGRESQL_NUM_SYNCHRONOUS_REPLICAS: 1
     POSTGRESQL_REP_USER: replica
-    POSTGRESQL_SPRINGBOOTWEB_PASSWORD:
-          vault: POSTGRESQL_SPRINGBOOTWEB_PASSWORD
-    PGPASSWORD: 
-      vault: PGPASSWORD
-    revision : 76
-
-    #WebDav Setup
-    PUSH_BACKUP_WEBDAV: False
-    DAV_FOLDER: DBBACKUP
-    DAV_USER: appz
-    DAV_USERPASSWORD:
-      vault: DAV_USERPASSWORD
-    WEBDAV_BACKUP_URL: http://webdav-2-0/
+    POSTGRESQL_USER1PASS: awxpass
+    POSTGRESQL_USER2PASS: R53BiUCCmk45rb
+    PGPASSWORD: R53BiUCCmk45rb
+    revision : 82
