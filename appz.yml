@@ -8,18 +8,18 @@ build:
     env: DEV
     build_file: none
     output_files: output/*.zip
-    image_template: postgres_master-12.7
+    image_template: postgres_master-13.3
     image_name: appz/postgress_master
     
 deploy:
-    context: awx/DEV
+    context: nageshaniminedi/DEV
     type: statefulset
     replicas: 1
     port:
     - 5432
     
 volumes:
-  - claim: postgres13-master-12-7-data-dev
+  - claim: postgres13-master-13-3-data-dev
     mount: /appz/data
     name: data
     size: 5Gi
