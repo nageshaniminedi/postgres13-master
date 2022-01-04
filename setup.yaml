@@ -26,4 +26,4 @@ restore:
        #password: $AUTH_PASSWORD # If it's a password protected URL, authentication (password) is required
     user: awx
     password: $POSTGRESQL_USER1PASS # password of the 'user' above.
-    token: 20220104-0530 # The restore token to be validated before restoring the database. (Same as TEARDOWN_TOKEN)
+    token: 20220104-0605 # The restore token to be validated before restoring the database. (Same as TEARDOWN_TOKEN)
