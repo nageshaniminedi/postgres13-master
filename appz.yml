@@ -23,7 +23,7 @@ volumes:
     mount: /appz/data
     name: data
     size: 5Gi
-    class: class: microk8s-hostpath
+    class: microk8s-hostpath
     mode: ReadWriteOnce   
     
 properties:
