@@ -12,7 +12,7 @@ build:
     image_name: appz/postgress_master
     
 deploy:
-    context: nageshaniminedi/DEV
+    context: alpha/DEV
     type: statefulset
     replicas: 1
     port:
