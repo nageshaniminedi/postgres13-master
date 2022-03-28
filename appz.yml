@@ -9,10 +9,10 @@ build:
     build_file: none
     output_files: output/*.zip
     image_template: postgres_master-13.3
-    image_name: appz/postgress_master
+    image_name: nageshaniminedi/postgress_master
     
 deploy:
-    context: alpha/DEV
+    context: nageshaniminedi/DEV
     type: statefulset
     replicas: 1
     port:
