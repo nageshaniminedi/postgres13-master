@@ -21,10 +21,11 @@ databases:
 restore:
   - database: awx
     source:
-       url: 'https://www.ecloudcontrol.com/wp-content/uploads/2021/11/AWX_db.zip'
+       url: https://www.ecloudcontrol.com/wp-content/uploads/2022/04/awx20_migrate.zip
+       #url: 'https://www.ecloudcontrol.com/wp-content/uploads/2021/11/AWX_db.zip'
        #url: 'https://www.ecloudcontrol.com/wp-content/uploads/2022/03/awx20.zip'
        #user: appz # If it's a password protected URL, authentication (username) is required
        #password: $AUTH_PASSWORD # If it's a password protected URL, authentication (password) is required
     user: awx
     password: $POSTGRESQL_USER1PASS # password of the 'user' above.
-    token: 20220428-0558 # The restore token to be validated before restoring the database. (Same as TEARDOWN_TOKEN)
+    token: 20220428-1310 # The restore token to be validated before restoring the database. (Same as TEARDOWN_TOKEN)
