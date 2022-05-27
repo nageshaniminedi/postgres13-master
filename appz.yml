@@ -39,4 +39,4 @@ properties:
     POSTGRESQL_USER1PASS: awxpass
     POSTGRESQL_USER2PASS: R53BiUCCmk45rb
     PGPASSWORD: R53BiUCCmk45rb
-    revision : 4
+    revision : 1
